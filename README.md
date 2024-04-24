@@ -1,2 +1,2 @@
-# portfolio_optimization_drl
+# Portfolio Optimization Drl
 Deep Reinforcement Learning Techniques for Portfolio Optimization
