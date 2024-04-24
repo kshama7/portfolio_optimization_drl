@@ -1,0 +1,25 @@
+digraph Methodology {
+    node [shape=rectangle, style=filled, fillcolor=lightblue, fontname=Arial];
+    edge [fontname=Arial];
+
+    Start [label="Start"];
+    StockSelection [label="1. Stock Selection\n(30 DJIA stocks)"];
+    FeatureSelection [label="2. Feature Selection\nand Data Pre-processing"];
+    FeatureReduction [label="3. Feature Reduction\n(Autoencoders)"];
+    TrainTestDataSplit [label="4. Train and Test Data\nSplit"];
+    BenchmarkPortfolios [label="5. Benchmark Portfolios\n(Equal Weights,\nMean-Variance)"];
+    DRLModel [label="6. Deep Reinforcement\nLearning Model\n(A2C, DDPG, PPO, SAC, TD3)"];
+    Backtesting [label="7. Backtesting of\nthe DRL Model"];
+
+    Start -> StockSelection;
+    StockSelection -> FeatureSelection;
+    FeatureSelection -> FeatureReduction;
+    FeatureReduction -> TrainTestDataSplit;
+    TrainTestDataSplit -> BenchmarkPortfolios;
+    BenchmarkPortfolios -> DRLModel;
+    DRLModel -> Backtesting;
+    Backtesting -> End;
+
+    End [label="End", shape=ellipse, style=filled, fillcolor=lightblue];
+}
+
